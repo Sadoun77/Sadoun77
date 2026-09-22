@@ -102,9 +102,9 @@ kid=f'''<!-- ============ شرح بصري للطفل ============ -->
 
   <div class="kid-sec"><span class="emo">🔍</span> أين أختبئُ في الكلمة؟</div>
   <div class="hide">
-    <div class="hbox a"><div class="t1">في الأوّل</div><div class="emo">✋</div><div class="ar"><em>يـ</em>ـد</div><div class="dots"><i></i><i class="on"></i></div></div>
+    <div class="hbox a"><div class="t1">في الأوّل</div><div class="emo">✋</div><div class="ar"><em>يـ</em>ـد</div><div class="dots"><i class="on"></i><i></i></div></div>
     <div class="hbox b"><div class="t1">في الوسط</div><div class="emo">🏠</div><div class="ar">بـ<em>ـيـ</em>ـت</div><div class="dots"><i></i><i class="on"></i><i></i></div></div>
-    <div class="hbox c"><div class="t1">في الآخر</div><div class="emo">🪑</div><div class="ar">كرسـ<em>ـي</em></div><div class="dots"><i class="on"></i><i></i><i></i><i></i></div></div>
+    <div class="hbox c"><div class="t1">في الآخر</div><div class="emo">🪑</div><div class="ar">كرسـ<em>ـي</em></div><div class="dots"><i></i><i></i><i></i><i class="on"></i></div></div>
   </div>
 
   <div class="kid-sec"><span class="emo">🎵</span> أغيّرُ صوتي مع الحركات</div>

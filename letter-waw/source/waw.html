@@ -1,0 +1,340 @@
+<!DOCTYPE html><html lang="ar" dir="rtl"><head><meta charset="utf-8"><title>حرف الواو</title><style>
+@font-face{font-family:Cairo;font-weight:400;src:url(fonts/Cairo-400.ttf)}
+@font-face{font-family:Cairo;font-weight:700;src:url(fonts/Cairo-700.ttf)}
+@font-face{font-family:Cairo;font-weight:900;src:url(fonts/Cairo-900.ttf)}
+@font-face{font-family:Amiri;font-weight:400;src:url(fonts/Amiri-400.ttf)}
+@font-face{font-family:Amiri;font-weight:700;src:url(fonts/Amiri-700.ttf)}
+:root{
+  --gold:#C9A13B; --gold-soft:#F6EDD3; --ink:#1F2A37; --muted:#6B7280;
+  --blue:#2B6CB0; --blue-soft:#E6F0FA; --green:#2F855A; --green-soft:#E6F4EA;
+  --red:#C53030; --red-soft:#FDECEC; --line:#E5E7EB;
+}
+@page{size:A4;margin:0}
+*{box-sizing:border-box;margin:0;padding:0}
+body{font-family:Cairo,sans-serif;color:var(--ink);background:#fff}
+.page{width:210mm;height:297mm;padding:12mm 14mm 10mm;display:flex;flex-direction:column;
+  page-break-after:always;overflow:hidden;position:relative}
+.page:last-child{page-break-after:auto}
+
+/* header */
+.head{display:flex;align-items:center;gap:5mm;padding-bottom:4mm;border-bottom:2.5px solid var(--gold)}
+.head img{width:20mm;height:auto}
+.head .t{flex:1}
+.head .school{font-weight:700;font-size:13pt}
+.head .meta{display:flex;gap:7mm;font-size:10.5pt;color:var(--muted);margin-top:1mm}
+.head .meta b{color:var(--ink)}
+.head .badge{background:var(--gold);color:#fff;font-weight:900;font-size:26pt;line-height:1;
+  width:19mm;height:19mm;border-radius:5mm;display:flex;align-items:center;justify-content:center;font-family:Amiri}
+
+h1{font-weight:900;font-size:24pt;text-align:center;margin:5mm 0 1mm}
+.sub{text-align:center;color:var(--muted);font-size:11pt;margin-bottom:5mm}
+
+.sec{margin-bottom:4.5mm}
+.sec-title{display:flex;align-items:center;gap:2.5mm;font-weight:700;font-size:13pt;margin-bottom:2.5mm}
+.num{background:var(--ink);color:#fff;width:7.5mm;height:7.5mm;border-radius:50%;display:inline-flex;
+  align-items:center;justify-content:center;font-size:10.5pt}
+
+.ar{font-family:Amiri,serif}
+
+/* shapes */
+.shapes{display:grid;grid-template-columns:repeat(4,1fr);gap:3mm}
+.shape{border:1.5px solid var(--line);border-radius:4mm;text-align:center;padding:2.5mm 1mm 3mm;background:#fff}
+.shape .lbl{font-size:9.5pt;color:var(--muted);font-weight:700}
+.shape .ch{font-family:Amiri;font-weight:700;font-size:38pt;line-height:1.35;color:var(--red)}
+.shape .w{font-family:Amiri;font-weight:700;font-size:19pt;line-height:1.2}
+.shape .w em{color:var(--red);font-style:normal}
+
+/* sounds */
+.sounds{display:grid;grid-template-columns:1fr 1fr;gap:3mm}
+.sbox{border-radius:4mm;padding:2.5mm 4mm}
+.sbox.short{background:var(--blue-soft)} .sbox.long{background:var(--green-soft)}
+.sbox h3{font-size:10.5pt;font-weight:700;margin-bottom:1mm}
+.sbox.short h3{color:var(--blue)} .sbox.long h3{color:var(--green)}
+.sbox .row{display:flex;justify-content:space-around}
+.sbox .row div{text-align:center}
+.sbox .row .s{font-family:Amiri;font-weight:700;font-size:28pt;line-height:1.4}
+.sbox .row .r{font-size:9.5pt;color:var(--muted)}
+
+/* words */
+.words{display:grid;grid-template-columns:repeat(4,1fr);gap:2.5mm}
+.word{background:var(--gold-soft);border-radius:3mm;text-align:center;padding:1.5mm 0}
+.word .ar{font-weight:700;font-size:21pt;line-height:1.35}
+.word .ar em{color:var(--red);font-style:normal}
+.word .pos{font-size:8.5pt;color:var(--muted)}
+
+/* plan */
+.plan{display:grid;grid-template-columns:1fr 1fr;gap:3mm}
+.card{border:1.5px solid var(--line);border-radius:4mm;padding:3mm 4mm;font-size:10.5pt;line-height:1.75}
+.card h3{font-size:11pt;font-weight:700;margin-bottom:1mm;color:var(--gold)}
+.card ol,.card ul{padding-right:5mm}
+
+/* worksheet pages */
+.ws-top{margin:5mm 0 3.5mm;display:flex;align-items:center;gap:3.5mm}
+.ws-top .n{background:var(--gold);color:#fff;font-weight:900;font-size:15pt;width:12mm;height:12mm;
+  border-radius:3mm;display:flex;align-items:center;justify-content:center;flex:none}
+.ws-top h2{font-size:17pt;font-weight:900;line-height:1.3}
+.ws-top p{font-size:10.5pt;color:var(--muted)}
+.hint{background:var(--blue-soft);border-right:4px solid var(--blue);border-radius:2.5mm;
+  padding:2mm 4mm;font-size:10.5pt;margin-bottom:4mm;line-height:1.7}
+.frame{flex:1;min-height:0;border:1.5px solid var(--line);border-radius:4mm;padding:4mm;
+  display:flex;align-items:center;justify-content:center}
+.frame img{max-width:100%;max-height:100%;object-fit:contain;display:block}
+
+.foot{margin-top:3mm;display:flex;justify-content:space-between;font-size:9pt;color:var(--muted);
+  border-top:1px solid var(--line);padding-top:2mm}
+.name{display:flex;gap:6mm;font-size:10.5pt;margin-bottom:0}
+
+/* weekly program */
+.prog-info{display:grid;grid-template-columns:repeat(3,1fr);gap:3mm;margin:6mm 0 5mm}
+.info{background:var(--gold-soft);border-radius:4mm;padding:3mm;text-align:center}
+.info .k{font-size:9.5pt;color:var(--muted);font-weight:700}
+.info .v{font-size:15pt;font-weight:900}
+.cols{display:grid;grid-template-columns:repeat(3,1fr);gap:4mm;flex:1;min-height:0}
+.col{border:1.5px solid var(--line);border-radius:5mm;overflow:hidden;display:flex;flex-direction:column}
+.col .ch{padding:3mm;text-align:center;font-weight:900;font-size:13pt;color:#fff}
+.col.past .ch{background:#718096} .col.new .ch{background:var(--red)} .col.hw .ch{background:var(--blue)}
+.col .body{padding:4mm;flex:1;display:flex;flex-direction:column;gap:3mm;font-size:10.5pt;line-height:1.7}
+.col .lesson{font-weight:900;font-size:13pt}
+.col .big{font-family:Amiri;font-weight:700;font-size:30pt;line-height:1.2;text-align:center}
+.col.past .big{color:#718096} .col.new .big{color:var(--red)} .col.hw .big{color:var(--blue)}
+.chips{display:flex;flex-wrap:wrap;gap:2mm;justify-content:center}
+.chip{background:#F3F4F6;border-radius:10mm;padding:0 3.5mm;font-family:Amiri;font-weight:700;font-size:15pt}
+.col ul{padding-right:5mm}
+.col img{margin-top:auto;align-self:center;height:48mm;width:auto;border-radius:2mm;box-shadow:0 1mm 3mm rgba(0,0,0,.15)}
+.teacher{margin-top:5mm;display:flex;justify-content:space-between;align-items:center}
+.teacher .box{border:1.5px solid var(--gold);border-radius:4mm;padding:2mm 6mm;font-size:11pt}
+.teacher .link{font-size:9.5pt;color:var(--muted);direction:ltr}
+
+
+
+
+/* ===== kids pages ===== */
+.kid-hero{display:flex;align-items:center;gap:6mm;margin:5mm 0 4mm}
+.kid-hero .L{width:48mm;height:48mm;border-radius:50%;background:var(--red-soft);display:flex;align-items:center;justify-content:center;flex:none;border:3px solid var(--red)}
+.kid-hero .L span{font-family:Amiri;font-weight:700;font-size:92pt;color:var(--red);line-height:1;margin-top:-8mm}
+.bubble{position:relative;background:var(--gold-soft);border-radius:6mm;padding:4mm 6mm;font-size:15pt;font-weight:700;line-height:1.8}
+.bubble:before{content:"";position:absolute;right:-5mm;top:50%;margin-top:-4mm;border:4mm solid transparent;border-left-color:var(--gold-soft);border-right:0}
+.bubble .ar{font-size:22pt;color:var(--red)}
+.emo{font-family:"Noto Color Emoji";font-weight:400}
+.kid-sec{font-size:14pt;font-weight:900;margin:3mm 0 2.5mm;display:flex;gap:2mm;align-items:center}
+.pics{display:grid;grid-template-columns:repeat(4,1fr);gap:3mm}
+.pic{border:2px solid var(--line);border-radius:5mm;text-align:center;padding:2mm 0 1mm}
+.pic .emo{font-size:30pt;line-height:1.3}
+.pic .ar{font-weight:700;font-size:22pt;line-height:1.3}
+.pic em{color:var(--red);font-style:normal}
+.hide{display:grid;grid-template-columns:repeat(3,1fr);gap:3mm}
+.hbox{border-radius:5mm;padding:2.5mm;text-align:center}
+.hbox.a{background:var(--blue-soft)} .hbox.b{background:var(--green-soft)} .hbox.c{background:var(--red-soft)}
+.hbox .t1{font-size:11pt;font-weight:900}
+.hbox .emo{font-size:24pt;line-height:1.2}
+.hbox .ar{font-weight:700;font-size:26pt;line-height:1.3}
+.hbox em{color:var(--red);font-style:normal}
+.dots{display:flex;justify-content:center;gap:4mm;margin-top:1mm}
+.dots i{width:4mm;height:4mm;border-radius:50%;background:#CBD5E0;display:block}
+.dots i.on{background:var(--red)}
+.snd{display:grid;grid-template-columns:repeat(3,1fr);gap:3mm}
+.sn{border:2px dashed var(--line);border-radius:5mm;text-align:center;padding:1mm}
+.sn .ar{font-weight:700;font-size:34pt;line-height:1.4;color:var(--blue)}
+.sn .x{font-size:10pt;color:var(--muted)}
+/* steps */
+.steps{display:grid;grid-template-columns:repeat(3,1fr);gap:4mm;margin:2mm 0 4mm}
+.st{border:2px solid var(--line);border-radius:5mm;text-align:center;padding:2mm 2mm 3mm}
+.st .no{display:inline-flex;width:9mm;height:9mm;border-radius:50%;background:var(--gold);color:#fff;font-weight:900;align-items:center;justify-content:center;font-size:13pt}
+.st svg{width:100%;height:40mm;display:block}
+.st .cap{font-size:11.5pt;font-weight:700;line-height:1.5}
+.ghost{font-family:Amiri;font-weight:700;font-size:150px;fill:#E2E8F0;text-anchor:middle}
+.ink{font-family:Amiri;font-weight:700;font-size:150px;fill:var(--red);text-anchor:middle}
+/* writing lines */
+.wl{width:100%;height:24mm;display:block;margin-bottom:2.5mm}
+.wl .l-top,.wl .l-mid{stroke:#CBD5E0;stroke-width:1.5;stroke-dasharray:8 6}
+.wl .l-base{stroke:var(--blue);stroke-width:2.5}
+.wl text{font-family:Amiri;font-weight:700;font-size:96px;text-anchor:middle;direction:rtl}
+.wl .model{fill:var(--ink)}
+.wl .trace{fill:none;stroke:#94A3B8;stroke-width:2;stroke-dasharray:5 4}
+.rowlbl{display:flex;align-items:center;gap:2mm;font-size:11pt;font-weight:700;margin:1.5mm 0 .5mm}
+.rowlbl .tag{background:var(--gold-soft);border-radius:3mm;padding:0 3mm;font-family:Amiri;font-size:17pt}
+.legend{display:flex;gap:6mm;font-size:10pt;color:var(--muted);margin-bottom:3mm}
+.legend b{color:var(--ink)}
+.wordrow{display:flex;align-items:center;gap:3mm;margin-bottom:2mm}
+.wordrow .emo{font-size:30pt;width:17mm;text-align:center;flex:none}
+.wordrow svg{flex:1}
+.fill{display:grid;grid-template-columns:repeat(3,1fr);gap:4mm}
+.fb{border:2px solid var(--line);border-radius:5mm;text-align:center;padding:2mm}
+.fb .emo{font-size:34pt;line-height:1.3}
+.fb .ar{font-weight:700;font-size:28pt;line-height:1.5}
+.fb .gap{display:inline-block;width:12mm;border-bottom:3px dotted var(--red);height:9mm;vertical-align:middle}
+.star{margin-top:auto;display:flex;align-items:center;justify-content:center;gap:4mm;font-size:13pt;font-weight:700;color:var(--muted)}
+.star .emo{font-size:22pt}
+</style><style>.steps svg .ghost,.steps svg .ink{font-size:190px}</style></head><body><section class="page">
+  <div class="head">
+    <img src="img0.jpeg" alt="">
+    <div class="t"><div class="school">المدرسة الكردية في النرويج — قسم اللغة العربية</div>
+      <div class="meta"><span>الصف: <b>الأول (أ)</b></span><span>المعلمة: <b>رجاء الحو</b></span></div></div>
+    <div class="badge">و</div>
+  </div>
+  <h1>برنامجُ الأسبوع</h1>
+  <div class="prog-info">
+    <div class="info"><div class="k">الأسبوع</div><div class="v">39</div></div>
+    <div class="info"><div class="k">التاريخ</div><div class="v">19 / 9 / 2026</div></div>
+    <div class="info"><div class="k">الصف</div><div class="v">الأول (أ)</div></div>
+  </div>
+  <div class="cols">
+    <div class="col past"><div class="ch">الدرس الماضي</div><div class="body">
+      <div class="lesson">الدرس: رامي و بابا</div><div class="big">ا</div>
+      <div>حرف (ا) وأشكاله</div>
+      <div class="chips"><span class="chip">رامي</span><span class="chip">ماما</span><span class="chip">بابا</span></div>
+      <img src="w_past.jpeg" alt=""></div></div>
+    <div class="col new"><div class="ch">الدرس الجديد</div><div class="body">
+      <div class="lesson">الدرس: نور و ماما</div><div class="big">و</div>
+      <div>حرف (و) وأشكاله</div>
+      <div class="chips"><span class="chip">ورد</span><span class="chip">ولد</span><span class="chip">موز</span></div>
+      <div>تدريب على قراءة الحرف والكلمات</div>
+      <img src="w_new.jpeg" alt=""></div></div>
+    <div class="col hw"><div class="ch">الواجبات المنزلية</div><div class="body">
+      <div class="lesson">كتاب مدرسة الحروف</div><div class="big">و</div>
+      <ul><li>كتابة حرف (و) وأشكاله</li><li>كلمات تحتوي حرف (و)</li></ul>
+      <div class="chips"><span class="chip">لوز</span><span class="chip">ورد</span></div>
+      <div>+ تمارين الكتابة المرفقة</div>
+      <img src="w_hw.jpeg" alt=""></div></div>
+  </div>
+  <div class="teacher"><div class="box">المعلمة: <b>رجاء الحو</b></div><div class="link">https://www.facebook.com/KurdiskSkoleiNorg</div></div>
+  <div class="foot"><span>حرف الواو ( و )</span><span>صفحة 1 من 6</span></div>
+</section>
+<section class="page">
+  <div class="head">
+    <img src="img0.jpeg" alt="">
+    <div class="t"><div class="school">المدرسة الكردية في النرويج — قسم اللغة العربية</div>
+      <div class="meta"><span>الصف: <b>الأول (أ)</b></span><span>المعلمة: <b>رجاء الحو</b></span><span>التاريخ: <b>19/9/2026</b></span></div></div>
+    <div class="badge">و</div>
+  </div>
+  <h1>حَرْفُ الواوِ <span class="ar" style="color:var(--red)">( و )</span></h1>
+  <p class="sub">الدرس: نور و ماما — شرح الحرف وتمارين الكتابة</p>
+  <div class="sec"><div class="sec-title"><span class="num">1</span>أشكالُ الحرف حسب موضعه في الكلمة</div>
+    <div class="shapes" style="grid-template-columns:repeat(3,1fr)">
+      <div class="shape"><div class="lbl">في أول الكلمة (منفصل)</div><div class="ch">و</div><div class="w"><em>و</em>َرْد</div></div>
+      <div class="shape"><div class="lbl">في وسط الكلمة (متصل)</div><div class="ch">ـو</div><div class="w">مـ<em>ـو</em>ز</div></div>
+      <div class="shape"><div class="lbl">في آخر الكلمة (متصل)</div><div class="ch">ـو</div><div class="w">دَلـ<em>ـو</em></div></div>
+    </div>
+    <div class="hint" style="margin:3mm 0 0">💡 <b>قاعدة مهمة:</b> حرف الواو يتّصل بالحرف الذي <b>قبله</b> فقط، ولا يتّصل أبدًا بالحرف الذي <b>بعده</b> — لذلك نترك مسافة بعده، مثل: <span class="ar" style="font-size:14pt">نور، موز، لوز</span>.</div>
+  </div>
+  <div class="sec"><div class="sec-title"><span class="num">2</span>أصواتُ الحرف القصيرة والطويلة</div>
+    <div class="sounds">
+      <div class="sbox short"><h3>الأصوات القصيرة (الحركات)</h3>
+        <div class="row"><div><div class="s">وَ</div><div class="r">فتحة</div></div><div><div class="s">وُ</div><div class="r">ضمة</div></div><div><div class="s">وِ</div><div class="r">كسرة</div></div></div></div>
+      <div class="sbox long"><h3>الأصوات الطويلة (المدود)</h3>
+        <div class="row"><div><div class="s">وا</div><div class="r">مد بالألف</div></div><div><div class="s">وو</div><div class="r">مد بالواو</div></div><div><div class="s">وي</div><div class="r">مد بالياء</div></div></div></div>
+    </div></div>
+  <div class="sec"><div class="sec-title"><span class="num">3</span>كلماتٌ تحتوي حرف الواو</div>
+    <div class="words">
+      <div class="word"><div class="ar"><em>وَ</em>رْد</div><div class="pos">في الأول</div></div>
+      <div class="word"><div class="ar"><em>وَ</em>لَد</div><div class="pos">في الأول</div></div>
+      <div class="word"><div class="ar">مَـ<em>ـو</em>ْز</div><div class="pos">في الوسط</div></div>
+      <div class="word"><div class="ar">نـ<em>ـو</em>ر</div><div class="pos">في الوسط</div></div>
+      <div class="word"><div class="ar">لَـ<em>ـو</em>ْز</div><div class="pos">في الوسط</div></div>
+      <div class="word"><div class="ar">دَلْـ<em>ـو</em></div><div class="pos">في الآخر</div></div>
+      <div class="word"><div class="ar">خَـ<em>ـو</em>خ</div><div class="pos">في الوسط</div></div>
+      <div class="word"><div class="ar"><em>وَ</em>جْه</div><div class="pos">في الأول</div></div>
+    </div></div>
+  <div class="sec"><div class="sec-title"><span class="num">4</span>ملاحظات لولي الأمر</div>
+    <div class="plan" style="grid-template-columns:1fr">
+      <div class="card"><ul style="columns:2">
+        <li>ساعِد طفلك على نطق الحرف بصوت واضح.</li><li>الواو ليس لها نقاط.</li>
+        <li>الواو لا تتصل بالحرف الذي بعدها.</li><li>اقرأ الكلمات معه وابحث عن الواو فيها.</li></ul></div>
+    </div></div>
+  <div class="foot" style="margin-top:auto"><span>حرف الواو ( و )</span><span>صفحة 2 من 6</span></div>
+</section>
+<section class="page">
+  <div class="head">
+    <img src="img0.jpeg" alt="">
+    <div class="t"><div class="school">المدرسة الكردية في النرويج — قسم اللغة العربية</div>
+      <div class="meta"><span>اسم الطالب: ...................................</span><span>الصف: <b>الأول (أ)</b></span></div></div>
+    <div class="badge">و</div>
+  </div>
+  <div class="kid-hero">
+    <div class="L"><span>و</span></div>
+    <div class="bubble">مرحبًا! <span class="emo">👋</span> أنا حرفُ <span class="ar">الواو</span><br>
+      لي رأسٌ صغيرٌ مدوّر <span class="emo">⚪</span> وذيلٌ طويل <span class="emo">🐒</span><br>
+      وليس عندي نقاط!</div>
+  </div>
+  <div class="kid-sec"><span class="emo">🔊</span> أسمعُ صوتي في هذه الكلمات</div>
+  <div class="pics">
+    <div class="pic"><div class="emo">🌹</div><div class="ar"><em>وَ</em>رْد</div></div>
+    <div class="pic"><div class="emo">👦</div><div class="ar"><em>وَ</em>لَد</div></div>
+    <div class="pic"><div class="emo">🍌</div><div class="ar">مَـ<em>ـو</em>ْز</div></div>
+    <div class="pic"><div class="emo">💡</div><div class="ar">نـ<em>ـو</em>ر</div></div>
+  </div>
+  <div class="kid-sec"><span class="emo">🔍</span> أين أختبئُ في الكلمة؟</div>
+  <div class="hide">
+    <div class="hbox a"><div class="t1">في الأوّل</div><div class="emo">🌹</div><div class="ar"><em>و</em>رد</div><div class="dots"><i class="on"></i><i></i><i></i></div></div>
+    <div class="hbox b"><div class="t1">في الوسط</div><div class="emo">🍌</div><div class="ar">مـ<em>ـو</em>ز</div><div class="dots"><i></i><i class="on"></i><i></i></div></div>
+    <div class="hbox c"><div class="t1">في الآخر</div><div class="emo">🪣</div><div class="ar">دلـ<em>ـو</em></div><div class="dots"><i></i><i></i><i class="on"></i></div></div>
+  </div>
+  <div class="kid-sec"><span class="emo">🤝</span> أمسكُ يدَ الحرفِ الذي قبلي فقط</div>
+  <div class="hint" style="font-size:12pt;text-align:center">أنا أمسكُ يدَ صديقي الذي <b>قبلي</b> <span class="emo">🤝</span> ولا أمسكُ يدَ الذي <b>بعدي</b> <span class="emo">✋</span>
+    <div class="ar" style="font-size:26pt;line-height:1.5">نـ<span style="color:var(--red)">ـو</span> ر &nbsp;&nbsp; مـ<span style="color:var(--red)">ـو</span> ز</div></div>
+  <div class="kid-sec"><span class="emo">🎵</span> أغيّرُ صوتي مع الحركات</div>
+  <div class="snd">
+    <div class="sn"><div class="ar">وَ</div><div class="x">فتحة ← «وَ» كما في وَرْد</div></div>
+    <div class="sn"><div class="ar">وُ</div><div class="x">ضمة ← «وُ»</div></div>
+    <div class="sn"><div class="ar">وِ</div><div class="x">كسرة ← «وِ»</div></div>
+  </div>
+  <div class="star"><span class="emo">⭐</span> قُلْ معي: وَ — وُ — وِ ... وَرْد! <span class="emo">⭐</span></div>
+  <div class="foot"><span>حرف الواو ( و )</span><span>صفحة 3 من 6</span></div>
+</section>
+<section class="page">
+  <div class="head">
+    <img src="img0.jpeg" alt="">
+    <div class="t"><div class="school">المدرسة الكردية في النرويج — قسم اللغة العربية</div>
+      <div class="meta"><span>اسم الطالب: ...................................</span><span>الصف: <b>الأول (أ)</b></span></div></div>
+    <div class="badge">و</div>
+  </div>
+  <div class="ws-top"><div class="n emo" style="font-size:18pt">✍️</div><div><h2>كيفَ أكتبُ حرفَ الواو؟</h2><p>ثلاثُ خطواتٍ سهلة</p></div></div>
+  <div class="steps">
+    <div class="st"><span class="no">1</span>
+      <svg viewBox="0 0 200 200"><defs><clipPath id="c1"><rect x="100" y="0" width="100" height="103"/></clipPath></defs><text x="113" y="106" class="ghost">و</text><text x="113" y="106" class="ink" clip-path="url(#c1)">و</text><circle cx="124" cy="46" r="8" fill="#2F855A"/></svg>
+      <div class="cap">أبدأ من فوق <span class="emo">🟢</span><br>وأرسمُ رأسًا صغيرًا مدوّرًا</div></div>
+    <div class="st"><span class="no">2</span>
+      <svg viewBox="0 0 200 200"><text x="113" y="106" class="ink">و</text></svg>
+      <div class="cap">أنزلُ وأرسمُ ذيلًا<br>تحتَ السطر <span class="emo">↙️</span></div></div>
+    <div class="st"><span class="no">3</span>
+      <svg viewBox="0 0 200 200"><text x="113" y="106" class="ghost" style="fill:#1F2A37">و</text><text x="165" y="60" style="font-family:Noto Color Emoji;font-size:34px">✅</text></svg>
+      <div class="cap">انتهيت! <br>الواو ليس لها نقاط</div></div>
+  </div>
+  <div class="legend"><span><b>الحرف الأسود:</b> انظر إليه</span><span><b>الحرف المنقّط:</b> مرِّر القلم فوقه</span><span><b>المكان الفارغ:</b> اكتب وحدك</span></div>
+  <svg class="wl" viewBox="0 0 1000 132"><line x1="0" y1="12" x2="1000" y2="12" class="l-top"/><line x1="0" y1="120" x2="1000" y2="120" class="l-mid"/><line x1="0" y1="64" x2="1000" y2="64" class="l-base"/><text x="938" y="64" class="model">و</text><text x="812" y="64" class="model">و</text><text x="688" y="64" class="trace">و</text><text x="562" y="64" class="trace">و</text><text x="438" y="64" class="trace">و</text><text x="312" y="64" class="trace">و</text></svg><svg class="wl" viewBox="0 0 1000 132"><line x1="0" y1="12" x2="1000" y2="12" class="l-top"/><line x1="0" y1="120" x2="1000" y2="120" class="l-mid"/><line x1="0" y1="64" x2="1000" y2="64" class="l-base"/><text x="938" y="64" class="model">و</text><text x="812" y="64" class="model">و</text><text x="688" y="64" class="trace">و</text><text x="562" y="64" class="trace">و</text><text x="438" y="64" class="trace">و</text><text x="312" y="64" class="trace">و</text></svg><svg class="wl" viewBox="0 0 1000 132"><line x1="0" y1="12" x2="1000" y2="12" class="l-top"/><line x1="0" y1="120" x2="1000" y2="120" class="l-mid"/><line x1="0" y1="64" x2="1000" y2="64" class="l-base"/><text x="938" y="64" class="model">و</text><text x="812" y="64" class="model">و</text><text x="688" y="64" class="trace">و</text><text x="562" y="64" class="trace">و</text><text x="438" y="64" class="trace">و</text><text x="312" y="64" class="trace">و</text></svg><svg class="wl" viewBox="0 0 1000 132"><line x1="0" y1="12" x2="1000" y2="12" class="l-top"/><line x1="0" y1="120" x2="1000" y2="120" class="l-mid"/><line x1="0" y1="64" x2="1000" y2="64" class="l-base"/><text x="938" y="64" class="model">و</text><text x="812" y="64" class="model">و</text><text x="688" y="64" class="trace">و</text><text x="562" y="64" class="trace">و</text><text x="438" y="64" class="trace">و</text><text x="312" y="64" class="trace">و</text></svg><svg class="wl" viewBox="0 0 1000 132"><line x1="0" y1="12" x2="1000" y2="12" class="l-top"/><line x1="0" y1="120" x2="1000" y2="120" class="l-mid"/><line x1="0" y1="64" x2="1000" y2="64" class="l-base"/><text x="938" y="64" class="model">و</text><text x="812" y="64" class="model">و</text><text x="688" y="64" class="trace">و</text><text x="562" y="64" class="trace">و</text><text x="438" y="64" class="trace">و</text><text x="312" y="64" class="trace">و</text></svg><svg class="wl" viewBox="0 0 1000 132"><line x1="0" y1="12" x2="1000" y2="12" class="l-top"/><line x1="0" y1="120" x2="1000" y2="120" class="l-mid"/><line x1="0" y1="64" x2="1000" y2="64" class="l-base"/><text x="938" y="64" class="model">و</text><text x="812" y="64" class="model">و</text><text x="688" y="64" class="trace">و</text><text x="562" y="64" class="trace">و</text><text x="438" y="64" class="trace">و</text><text x="312" y="64" class="trace">و</text></svg>
+  <div class="star"><span class="emo">⭐</span> أحسنت! الرأس صغير والذيل تحت السطر <span class="emo">⭐</span></div>
+  <div class="foot"><span>حرف الواو ( و )</span><span>صفحة 4 من 6</span></div>
+</section>
+<section class="page">
+  <div class="head">
+    <img src="img0.jpeg" alt="">
+    <div class="t"><div class="school">المدرسة الكردية في النرويج — قسم اللغة العربية</div>
+      <div class="meta"><span>اسم الطالب: ...................................</span><span>الصف: <b>الأول (أ)</b></span></div></div>
+    <div class="badge">و</div>
+  </div>
+  <div class="ws-top"><div class="n emo" style="font-size:18pt">✏️</div><div><h2>أكتبُ أشكالَ حرفِ الواو</h2><p>منفصلة — متصلة</p></div></div>
+  <div class="hint">✏️ تتبّع الحرف المنقّط، ثم اكتبه وحدك في آخر السطر. ابدأ دائمًا من اليمين <span class="emo">⬅️</span></div>
+  <div class="rowlbl"><span class="tag">و</span> منفصلة — مثل <span class="ar" style="font-size:15pt">وَرْد 🌹</span></div>
+  <svg class="wl" viewBox="0 0 1000 132"><line x1="0" y1="12" x2="1000" y2="12" class="l-top"/><line x1="0" y1="120" x2="1000" y2="120" class="l-mid"/><line x1="0" y1="64" x2="1000" y2="64" class="l-base"/><text x="938" y="64" class="model">و</text><text x="812" y="64" class="model">و</text><text x="688" y="64" class="trace">و</text><text x="562" y="64" class="trace">و</text><text x="438" y="64" class="trace">و</text><text x="312" y="64" class="trace">و</text></svg><svg class="wl" viewBox="0 0 1000 132"><line x1="0" y1="12" x2="1000" y2="12" class="l-top"/><line x1="0" y1="120" x2="1000" y2="120" class="l-mid"/><line x1="0" y1="64" x2="1000" y2="64" class="l-base"/><text x="938" y="64" class="model">و</text><text x="812" y="64" class="trace">و</text><text x="688" y="64" class="trace">و</text><text x="562" y="64" class="trace">و</text><text x="438" y="64" class="trace">و</text></svg><svg class="wl" viewBox="0 0 1000 132"><line x1="0" y1="12" x2="1000" y2="12" class="l-top"/><line x1="0" y1="120" x2="1000" y2="120" class="l-mid"/><line x1="0" y1="64" x2="1000" y2="64" class="l-base"/><text x="938" y="64" class="model">و</text><text x="812" y="64" class="trace">و</text><text x="688" y="64" class="trace">و</text><text x="562" y="64" class="trace">و</text></svg>
+  <div class="rowlbl"><span class="tag">ـو</span> متصلة بما قبلها — مثل <span class="ar" style="font-size:15pt">مَوْز 🍌</span></div>
+  <svg class="wl" viewBox="0 0 1000 132"><line x1="0" y1="12" x2="1000" y2="12" class="l-top"/><line x1="0" y1="120" x2="1000" y2="120" class="l-mid"/><line x1="0" y1="64" x2="1000" y2="64" class="l-base"/><text x="938" y="64" class="model">ـو</text><text x="812" y="64" class="model">ـو</text><text x="688" y="64" class="trace">ـو</text><text x="562" y="64" class="trace">ـو</text><text x="438" y="64" class="trace">ـو</text><text x="312" y="64" class="trace">ـو</text></svg><svg class="wl" viewBox="0 0 1000 132"><line x1="0" y1="12" x2="1000" y2="12" class="l-top"/><line x1="0" y1="120" x2="1000" y2="120" class="l-mid"/><line x1="0" y1="64" x2="1000" y2="64" class="l-base"/><text x="938" y="64" class="model">ـو</text><text x="812" y="64" class="trace">ـو</text><text x="688" y="64" class="trace">ـو</text><text x="562" y="64" class="trace">ـو</text><text x="438" y="64" class="trace">ـو</text></svg><svg class="wl" viewBox="0 0 1000 132"><line x1="0" y1="12" x2="1000" y2="12" class="l-top"/><line x1="0" y1="120" x2="1000" y2="120" class="l-mid"/><line x1="0" y1="64" x2="1000" y2="64" class="l-base"/><text x="938" y="64" class="model">ـو</text><text x="812" y="64" class="trace">ـو</text><text x="688" y="64" class="trace">ـو</text><text x="562" y="64" class="trace">ـو</text></svg>
+  <div class="foot"><span>حرف الواو ( و )</span><span>صفحة 5 من 6</span></div>
+</section>
+<section class="page">
+  <div class="head">
+    <img src="img0.jpeg" alt="">
+    <div class="t"><div class="school">المدرسة الكردية في النرويج — قسم اللغة العربية</div>
+      <div class="meta"><span>اسم الطالب: ...................................</span><span>الصف: <b>الأول (أ)</b></span></div></div>
+    <div class="badge">و</div>
+  </div>
+  <div class="ws-top"><div class="n emo" style="font-size:18pt">🖍️</div><div><h2>أكتبُ كلماتٍ فيها حرفُ الواو</h2><p>أنظرُ إلى الصورة، أقرأ الكلمة، ثم أكتبها</p></div></div>
+  <div class="wordrow"><span class="emo">🌹</span><svg class="wl" viewBox="0 0 1000 132"><line x1="0" y1="12" x2="1000" y2="12" class="l-top"/><line x1="0" y1="120" x2="1000" y2="120" class="l-mid"/><line x1="0" y1="64" x2="1000" y2="64" class="l-base"/><text x="875" y="64" class="model">ورد</text><text x="625" y="64" class="trace">ورد</text><text x="375" y="64" class="trace">ورد</text></svg></div><div class="wordrow"><span class="emo">👦</span><svg class="wl" viewBox="0 0 1000 132"><line x1="0" y1="12" x2="1000" y2="12" class="l-top"/><line x1="0" y1="120" x2="1000" y2="120" class="l-mid"/><line x1="0" y1="64" x2="1000" y2="64" class="l-base"/><text x="875" y="64" class="model">ولد</text><text x="625" y="64" class="trace">ولد</text><text x="375" y="64" class="trace">ولد</text></svg></div><div class="wordrow"><span class="emo">🍌</span><svg class="wl" viewBox="0 0 1000 132"><line x1="0" y1="12" x2="1000" y2="12" class="l-top"/><line x1="0" y1="120" x2="1000" y2="120" class="l-mid"/><line x1="0" y1="64" x2="1000" y2="64" class="l-base"/><text x="875" y="64" class="model">موز</text><text x="625" y="64" class="trace">موز</text><text x="375" y="64" class="trace">موز</text></svg></div><div class="wordrow"><span class="emo">💡</span><svg class="wl" viewBox="0 0 1000 132"><line x1="0" y1="12" x2="1000" y2="12" class="l-top"/><line x1="0" y1="120" x2="1000" y2="120" class="l-mid"/><line x1="0" y1="64" x2="1000" y2="64" class="l-base"/><text x="875" y="64" class="model">نور</text><text x="625" y="64" class="trace">نور</text><text x="375" y="64" class="trace">نور</text></svg></div><div class="wordrow"><span class="emo">🪣</span><svg class="wl" viewBox="0 0 1000 132"><line x1="0" y1="12" x2="1000" y2="12" class="l-top"/><line x1="0" y1="120" x2="1000" y2="120" class="l-mid"/><line x1="0" y1="64" x2="1000" y2="64" class="l-base"/><text x="875" y="64" class="model">دلو</text><text x="625" y="64" class="trace">دلو</text><text x="375" y="64" class="trace">دلو</text></svg></div>
+  <div class="kid-sec" style="margin-top:4mm"><span class="emo">🧩</span> أكملُ الكلمةَ بحرفِ الواو المناسب <span class="ar" style="font-size:15pt">( و / ـو )</span></div>
+  <div class="fill">
+    <div class="fb"><div class="emo">👦</div><div class="ar"><span class="gap"></span>لد</div></div>
+    <div class="fb"><div class="emo">🍌</div><div class="ar">مـ<span class="gap"></span>ز</div></div>
+    <div class="fb"><div class="emo">💡</div><div class="ar">نـ<span class="gap"></span>ر</div></div>
+  </div>
+  <div class="star"><span class="emo">🌟</span> رائع! أنت الآن تعرف حرف الواو <span class="emo">🌟</span></div>
+  <div class="foot"><span>حرف الواو ( و )</span><span>صفحة 6 من 6</span></div>
+</section></body></html>
