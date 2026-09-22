@@ -1,0 +1,223 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+<meta charset="utf-8">
+<title>حرف الياء</title>
+<style>
+@font-face{font-family:Cairo;font-weight:400;src:url(fonts/Cairo-400.ttf)}
+@font-face{font-family:Cairo;font-weight:700;src:url(fonts/Cairo-700.ttf)}
+@font-face{font-family:Cairo;font-weight:900;src:url(fonts/Cairo-900.ttf)}
+@font-face{font-family:Amiri;font-weight:400;src:url(fonts/Amiri-400.ttf)}
+@font-face{font-family:Amiri;font-weight:700;src:url(fonts/Amiri-700.ttf)}
+:root{
+  --gold:#C9A13B; --gold-soft:#F6EDD3; --ink:#1F2A37; --muted:#6B7280;
+  --blue:#2B6CB0; --blue-soft:#E6F0FA; --green:#2F855A; --green-soft:#E6F4EA;
+  --red:#C53030; --red-soft:#FDECEC; --line:#E5E7EB;
+}
+@page{size:A4;margin:0}
+*{box-sizing:border-box;margin:0;padding:0}
+body{font-family:Cairo,sans-serif;color:var(--ink);background:#fff}
+.page{width:210mm;height:297mm;padding:12mm 14mm 10mm;display:flex;flex-direction:column;
+  page-break-after:always;overflow:hidden;position:relative}
+.page:last-child{page-break-after:auto}
+
+/* header */
+.head{display:flex;align-items:center;gap:5mm;padding-bottom:4mm;border-bottom:2.5px solid var(--gold)}
+.head img{width:20mm;height:auto}
+.head .t{flex:1}
+.head .school{font-weight:700;font-size:13pt}
+.head .meta{display:flex;gap:7mm;font-size:10.5pt;color:var(--muted);margin-top:1mm}
+.head .meta b{color:var(--ink)}
+.head .badge{background:var(--gold);color:#fff;font-weight:900;font-size:26pt;line-height:1;
+  width:19mm;height:19mm;border-radius:5mm;display:flex;align-items:center;justify-content:center;font-family:Amiri}
+
+h1{font-weight:900;font-size:24pt;text-align:center;margin:5mm 0 1mm}
+.sub{text-align:center;color:var(--muted);font-size:11pt;margin-bottom:5mm}
+
+.sec{margin-bottom:4.5mm}
+.sec-title{display:flex;align-items:center;gap:2.5mm;font-weight:700;font-size:13pt;margin-bottom:2.5mm}
+.num{background:var(--ink);color:#fff;width:7.5mm;height:7.5mm;border-radius:50%;display:inline-flex;
+  align-items:center;justify-content:center;font-size:10.5pt}
+
+.ar{font-family:Amiri,serif}
+
+/* shapes */
+.shapes{display:grid;grid-template-columns:repeat(4,1fr);gap:3mm}
+.shape{border:1.5px solid var(--line);border-radius:4mm;text-align:center;padding:2.5mm 1mm 3mm;background:#fff}
+.shape .lbl{font-size:9.5pt;color:var(--muted);font-weight:700}
+.shape .ch{font-family:Amiri;font-weight:700;font-size:38pt;line-height:1.35;color:var(--red)}
+.shape .w{font-family:Amiri;font-weight:700;font-size:19pt;line-height:1.2}
+.shape .w em{color:var(--red);font-style:normal}
+
+/* sounds */
+.sounds{display:grid;grid-template-columns:1fr 1fr;gap:3mm}
+.sbox{border-radius:4mm;padding:2.5mm 4mm}
+.sbox.short{background:var(--blue-soft)} .sbox.long{background:var(--green-soft)}
+.sbox h3{font-size:10.5pt;font-weight:700;margin-bottom:1mm}
+.sbox.short h3{color:var(--blue)} .sbox.long h3{color:var(--green)}
+.sbox .row{display:flex;justify-content:space-around}
+.sbox .row div{text-align:center}
+.sbox .row .s{font-family:Amiri;font-weight:700;font-size:28pt;line-height:1.4}
+.sbox .row .r{font-size:9.5pt;color:var(--muted)}
+
+/* words */
+.words{display:grid;grid-template-columns:repeat(4,1fr);gap:2.5mm}
+.word{background:var(--gold-soft);border-radius:3mm;text-align:center;padding:1.5mm 0}
+.word .ar{font-weight:700;font-size:21pt;line-height:1.35}
+.word .ar em{color:var(--red);font-style:normal}
+.word .pos{font-size:8.5pt;color:var(--muted)}
+
+/* plan */
+.plan{display:grid;grid-template-columns:1fr 1fr;gap:3mm}
+.card{border:1.5px solid var(--line);border-radius:4mm;padding:3mm 4mm;font-size:10.5pt;line-height:1.75}
+.card h3{font-size:11pt;font-weight:700;margin-bottom:1mm;color:var(--gold)}
+.card ol,.card ul{padding-right:5mm}
+
+/* worksheet pages */
+.ws-top{margin:5mm 0 3.5mm;display:flex;align-items:center;gap:3.5mm}
+.ws-top .n{background:var(--gold);color:#fff;font-weight:900;font-size:15pt;width:12mm;height:12mm;
+  border-radius:3mm;display:flex;align-items:center;justify-content:center;flex:none}
+.ws-top h2{font-size:17pt;font-weight:900;line-height:1.3}
+.ws-top p{font-size:10.5pt;color:var(--muted)}
+.hint{background:var(--blue-soft);border-right:4px solid var(--blue);border-radius:2.5mm;
+  padding:2mm 4mm;font-size:10.5pt;margin-bottom:4mm;line-height:1.7}
+.frame{flex:1;min-height:0;border:1.5px solid var(--line);border-radius:4mm;padding:4mm;
+  display:flex;align-items:center;justify-content:center}
+.frame img{max-width:100%;max-height:100%;object-fit:contain;display:block}
+
+.foot{margin-top:3mm;display:flex;justify-content:space-between;font-size:9pt;color:var(--muted);
+  border-top:1px solid var(--line);padding-top:2mm}
+.name{display:flex;gap:6mm;font-size:10.5pt;margin-bottom:0}
+</style>
+</head>
+<body>
+
+<!-- ============ صفحة 1: شرح الدرس ============ -->
+<section class="page">
+  <div class="head">
+    <img src="img0.jpeg" alt="">
+    <div class="t">
+      <div class="school">المدرسة الكردية في النرويج — قسم اللغة العربية</div>
+      <div class="meta"><span>الصف: <b>الأول (أ)</b></span><span>المعلمة: <b>رجاء الحو</b></span><span>التاريخ: ........................</span></div>
+    </div>
+    <div class="badge">ي</div>
+  </div>
+
+  <h1>حَرْفُ الياءِ <span class="ar" style="color:var(--red)">( ي )</span></h1>
+  <p class="sub">شرح الدرس وأوراق العمل</p>
+
+  <div class="sec">
+    <div class="sec-title"><span class="num">1</span>أشكالُ الحرف حسب موضعه في الكلمة</div>
+    <div class="shapes">
+      <div class="shape"><div class="lbl">في أول الكلمة</div><div class="ch">يـ</div><div class="w"><em>يـ</em>ـمين</div></div>
+      <div class="shape"><div class="lbl">في وسط الكلمة</div><div class="ch">ـيـ</div><div class="w">عَـ<em>ـيْـ</em>ـن</div></div>
+      <div class="shape"><div class="lbl">في آخر الكلمة (متصل)</div><div class="ch">ـي</div><div class="w">كُرْسـ<em>ـي</em></div></div>
+      <div class="shape"><div class="lbl">في آخر الكلمة (منفصل)</div><div class="ch">ي</div><div class="w">جَرْ<em>يٌ</em></div></div>
+    </div>
+  </div>
+
+  <div class="sec">
+    <div class="sec-title"><span class="num">2</span>أصواتُ الحرف القصيرة والطويلة</div>
+    <div class="sounds">
+      <div class="sbox short"><h3>الأصوات القصيرة (الحركات)</h3>
+        <div class="row"><div><div class="s">يَ</div><div class="r">فتحة</div></div><div><div class="s">يُ</div><div class="r">ضمة</div></div><div><div class="s">يِ</div><div class="r">كسرة</div></div></div></div>
+      <div class="sbox long"><h3>الأصوات الطويلة (المدود)</h3>
+        <div class="row"><div><div class="s">يا</div><div class="r">مد بالألف</div></div><div><div class="s">يو</div><div class="r">مد بالواو</div></div><div><div class="s">يي</div><div class="r">مد بالياء</div></div></div></div>
+    </div>
+  </div>
+
+  <div class="sec">
+    <div class="sec-title"><span class="num">3</span>كلماتٌ تحتوي حرف الياء</div>
+    <div class="words">
+      <div class="word"><div class="ar"><em>يَـ</em>ـد</div><div class="pos">في الأول</div></div>
+      <div class="word"><div class="ar"><em>يَـ</em>ـمامة</div><div class="pos">في الأول</div></div>
+      <div class="word"><div class="ar">تِـ<em>ـيـ</em>ـن</div><div class="pos">في الوسط</div></div>
+      <div class="word"><div class="ar">طُـ<em>ـيـ</em>ـور</div><div class="pos">في الوسط</div></div>
+      <div class="word"><div class="ar">بَقِـ<em>ـيَ</em></div><div class="pos">في الآخر</div></div>
+      <div class="word"><div class="ar">كُرْسِـ<em>ـي</em></div><div class="pos">في الآخر</div></div>
+      <div class="word"><div class="ar">عَـ<em>ـيْـ</em>ـن</div><div class="pos">في الوسط</div></div>
+      <div class="word"><div class="ar"><em>يَـ</em>ـمين</div><div class="pos">في الأول</div></div>
+    </div>
+  </div>
+
+  <div class="sec">
+    <div class="sec-title"><span class="num">4</span>خطة الدرس</div>
+    <div class="plan">
+      <div class="card"><h3>أوراق العمل</h3>
+        <ol>
+          <li>تتبّع حرف الياء (تين)</li>
+          <li>كتابة الياء على النقاط (يد — يمامة)</li>
+          <li>تتبّع الحرف وتمييزه بين الحروف</li>
+          <li>تمارين شاملة على حرف الياء</li>
+        </ol></div>
+      <div class="card"><h3>ملاحظات لولي الأمر</h3>
+        <ul>
+          <li>ساعِد طفلك على نطق الحرف بصوت واضح.</li>
+          <li>يبدأ التتبّع من النقطة وباتجاه السهم.</li>
+          <li>نقطتا الياء تحت الحرف دائمًا.</li>
+          <li>اقرأ الكلمات معه وابحث عن الياء فيها.</li>
+        </ul></div>
+    </div>
+  </div>
+
+  <div class="foot" style="margin-top:auto"><span>حرف الياء ( ي )</span><span>https://www.facebook.com/KurdiskSkoleiNorg</span><span>صفحة 1 من 5</span></div>
+</section>
+
+<!-- ============ ورقة عمل 1 ============ -->
+<section class="page">
+  <div class="head">
+    <img src="img0.jpeg" alt="">
+    <div class="t"><div class="school">المدرسة الكردية في النرويج — قسم اللغة العربية</div>
+      <div class="meta"><span>اسم الطالب: ...................................</span><span>الصف: <b>الأول (أ)</b></span></div></div>
+    <div class="badge">ي</div>
+  </div>
+  <div class="ws-top"><div class="n">1</div><div><h2>تتبّعُ حرف الياء</h2><p>ي — تِين</p></div></div>
+  <div class="hint">✏️ مرِّر القلم فوق الخط المنقّط لكل حرف، ثم ضع النقطتين تحت الحرف. انطق: <b class="ar" style="font-size:13pt">يِ — تِين</b></div>
+  <div class="frame"><img src="ws2.jpg" alt=""></div>
+  <div class="foot"><span>حرف الياء ( ي )</span><span>صفحة 2 من 5</span></div>
+</section>
+
+<!-- ============ ورقة عمل 2 ============ -->
+<section class="page">
+  <div class="head">
+    <img src="img0.jpeg" alt="">
+    <div class="t"><div class="school">المدرسة الكردية في النرويج — قسم اللغة العربية</div>
+      <div class="meta"><span>اسم الطالب: ...................................</span><span>الصف: <b>الأول (أ)</b></span></div></div>
+    <div class="badge">ي</div>
+  </div>
+  <div class="ws-top"><div class="n">2</div><div><h2>كتابةُ حرف الياء</h2><p>يَد — يَمامة</p></div></div>
+  <div class="hint">✏️ اكتب الحرف فوق النقاط في الصفّين الأوّلين، ثم اكتبه وحدك في المربعات الفارغة.</div>
+  <div class="frame"><img src="ws3.jpg" alt=""></div>
+  <div class="foot"><span>حرف الياء ( ي )</span><span>صفحة 3 من 5</span></div>
+</section>
+
+<!-- ============ ورقة عمل 3 ============ -->
+<section class="page">
+  <div class="head">
+    <img src="img0.jpeg" alt="">
+    <div class="t"><div class="school">المدرسة الكردية في النرويج — قسم اللغة العربية</div>
+      <div class="meta"><span>اسم الطالب: ...................................</span><span>الصف: <b>الأول (أ)</b></span></div></div>
+    <div class="badge">ي</div>
+  </div>
+  <div class="ws-top"><div class="n">3</div><div><h2>تتبّعُ الحرف وتلوينُ دوائره</h2><p>ميِّز حرف الياء بين الحروف</p></div></div>
+  <div class="hint">✏️ تتبّع حرف الياء في الأعلى، ثم لوِّن كل دائرة فيها حرف <b class="ar" style="font-size:13pt">( ي )</b> فقط.</div>
+  <div class="frame"><img src="ws4.jpg" alt=""></div>
+  <div class="foot"><span>حرف الياء ( ي )</span><span>صفحة 4 من 5</span></div>
+</section>
+
+<!-- ============ ورقة عمل 4 ============ -->
+<section class="page">
+  <div class="head">
+    <img src="img0.jpeg" alt="">
+    <div class="t"><div class="school">المدرسة الكردية في النرويج — قسم اللغة العربية</div>
+      <div class="meta"><span>اسم الطالب: ...................................</span><span>الصف: <b>الأول (أ)</b></span></div></div>
+    <div class="badge">ي</div>
+  </div>
+  <div class="ws-top"><div class="n">4</div><div><h2>تمارينُ شاملة على حرف الياء</h2><p>أشكال الحرف — تمييزه — ملء الفراغ — أصواته</p></div></div>
+  <div class="hint">✏️ اقرأ كل سؤال مع ولي الأمر، واستعن بصفحة الشرح (الصفحة 1) لمعرفة أشكال الحرف وأصواته.</div>
+  <div class="frame"><img src="ws1.jpg" alt=""></div>
+  <div class="foot"><span>حرف الياء ( ي )</span><span>صفحة 5 من 5</span></div>
+</section>
+
+</body>
+</html>
