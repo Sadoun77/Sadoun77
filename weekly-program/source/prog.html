@@ -1,0 +1,70 @@
+<!DOCTYPE html><html lang="ar" dir="rtl"><head><meta charset="utf-8"><title>برنامج الأسبوع</title>
+<style>
+@font-face{font-family:Cairo;font-weight:400;src:url(fonts/Cairo-400.ttf)}
+@font-face{font-family:Cairo;font-weight:700;src:url(fonts/Cairo-700.ttf)}
+@font-face{font-family:Cairo;font-weight:900;src:url(fonts/Cairo-900.ttf)}
+@font-face{font-family:Amiri;font-weight:700;src:url(fonts/Amiri-700.ttf)}
+:root{--gold:#C9A13B;--gold-soft:#F6EDD3;--ink:#1F2A37;--muted:#6B7280;--line:#E5E7EB}
+@page{size:A4 landscape;margin:0}
+*{box-sizing:border-box;margin:0;padding:0}
+body{font-family:Cairo,sans-serif;color:var(--ink);background:#fff}
+.page{width:297mm;height:210mm;padding:10mm 14mm 8mm;display:flex;flex-direction:column}
+.head{display:flex;align-items:center;gap:6mm;padding-bottom:4mm;border-bottom:3px solid var(--gold)}
+.head img{width:22mm}
+.head .t{flex:1}
+.school{font-weight:900;font-size:15pt;white-space:nowrap}
+.title{font-weight:700;font-size:12pt;color:var(--muted)}
+.info{display:flex;gap:3mm}
+.info>div{white-space:nowrap;background:var(--gold-soft);border-radius:4mm;padding:2mm 5mm;text-align:center;min-width:27mm}
+.info .k{font-size:9pt;color:var(--muted);font-weight:700}
+.info .v{font-size:14pt;font-weight:900}
+.cols{flex:1;display:grid;grid-template-columns:repeat(3,1fr);gap:5mm;margin-top:6mm;min-height:0}
+.col{border:1.5px solid var(--line);border-radius:5mm;overflow:hidden;display:flex;flex-direction:column}
+.ch{padding:3mm;text-align:center;font-weight:900;font-size:15pt;color:#fff}
+.past .ch{background:#718096}.new .ch{background:#C53030}.hw .ch{background:#2B6CB0}
+.body{flex:1;padding:5mm 6mm;display:flex;flex-direction:column;font-size:13.5pt;line-height:1.9;font-weight:700}
+.body .ls{font-size:15pt;font-weight:900}
+.past .ls{color:#4A5568}.new .ls{color:#C53030}.hw .ls{color:#2B6CB0}
+.body img{margin-top:auto;align-self:center;height:52mm;width:auto;border-radius:2mm;box-shadow:0 1mm 3mm rgba(0,0,0,.18)}
+.foot{display:flex;justify-content:space-between;align-items:center;margin-top:5mm}
+.teacher{border:2px solid var(--gold);border-radius:4mm;padding:1.5mm 7mm;font-size:13pt}
+.link{background:#FEF3C7;border:1px solid #E5C77A;border-radius:3mm;padding:1.5mm 5mm;font-size:10pt;direction:ltr}
+</style></head><body>
+<section class="page">
+  <div class="head">
+    <img src="img0.jpeg" alt="">
+    <div class="t"><div class="school">المدرسة الكردية في النرويج ، قسم اللغة العربية</div><div class="title">برنامج الأسبوع</div></div>
+    <div class="info">
+      <div><div class="k">رقم الأسبوع</div><div class="v">39</div></div>
+      <div><div class="k">التاريخ</div><div class="v">27/9/2026</div></div>
+      <div><div class="k">الصف</div><div class="v">الأول (ب)</div></div>
+    </div>
+  </div>
+  <div class="cols">
+    <div class="col past"><div class="ch">الدرس الماضي</div><div class="body">
+      <div class="ls">الدرس : نور و ماما</div>
+      <div>حرف (و) وأشكاله</div>
+      <div>كلمات تحتوي حرف (و)</div>
+      <div>( ورد , ولد , موز )</div>
+      <div>تدريب على قراءة الحرف و الكلمات</div>
+      <img src="w_new.jpeg" alt=""></div></div>
+    <div class="col new"><div class="ch">الدرس الجديد</div><div class="body">
+      <div class="ls">الدرس : يدي و قدمي</div>
+      <div>حرف (ي) بأشكاله</div>
+      <div>كلمات تحتوي حرف (ي)</div>
+      <div>( بيت , يوم , يد )</div>
+      <div>تدريبات على قراءة الحرف و الكلمات</div>
+      <img src="b3.jpeg" alt=""></div></div>
+    <div class="col hw"><div class="ch">الواجبات المنزلية</div><div class="body">
+      <div class="ls">كتابة حرف (ي) و أشكاله</div>
+      <div>على كتاب مدرسة الحروف</div>
+      <div>كلمات تحتوي حرف (ي)</div>
+      <div>( يد , بيت )</div>
+      <div>وأشكال الحرف</div>
+      <img src="b1.jpeg" alt=""></div></div>
+  </div>
+  <div class="foot">
+    <div class="teacher">المعلمة : <b>رجاء الحو</b></div>
+    <div class="link">https://www.facebook.com/KurdiskSkoleiNorg</div>
+  </div>
+</section></body></html>
